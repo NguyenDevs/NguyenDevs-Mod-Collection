@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "citresewn",
+  "version": "1.2.2+1.21",
+  "name": "CIT Resewn",
+  "description": "Re-implements MCPatcher\u0027s CIT",
+  "authors": [
+    "SHsuperCM"
+  ],
+  "license": "MIT",
+  "icon": "assets/citresewn/logo.png",
+  "contact": {
+    "homepage": "https://citresewn.shcm.io/",
+    "sources": "https://github.com/SHsuperCM/CITResewn",
+    "issues": "https://github.com/SHsuperCM/CITResewn/issues"
+  },
+  "environment": "client",
+  "accessWidener": "citresewn.accesswidener",
+  "mixins": [
+    "citresewn.mixins.json"
+  ],
+  "depends": {
+    "fabric": "*",
+    "fabricloader": "*",
+    "minecraft": "\u003e\u003d1.21 \u003c\u003d1.21.1"
+  },
+  "recommends": {
+    "modmenu": "*",
+    "cloth-config2": "*"
+  },
+  "breaks": {
+    "canvas": "*"
+  },
+  "entrypoints": {
+    "modmenu": [
+      "shcm.shsupercm.fabric.citresewn.config.CITResewnModMenu"
+    ],
+    "citresewn:global_property": [
+      "shcm.shsupercm.fabric.citresewn.cit.builtin.conditions.core.FallbackCondition::globalProperty"
+    ],
+    "client": [
+      "shcm.shsupercm.fabric.citresewn.CITResewn::INSTANCE"
+    ],
+    "citresewn:condition": [
+      "shcm.shsupercm.fabric.citresewn.cit.builtin.conditions.core.FallbackCondition::CONTAINER",
+      "shcm.shsupercm.fabric.citresewn.cit.builtin.conditions.core.WeightCondition::CONTAINER"
+    ]
+  },
+  "custom": {
+    "loom:injected_interfaces": {}
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/citresewn-defaults-1.2.2+1.21.jar"
+    }
+  ]
+}
